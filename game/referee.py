@@ -1,3 +1,4 @@
+from events import PlayCardEvent
 from rules import get_move_violation
 
 
@@ -59,17 +60,43 @@ class AIReferee:
             "reason": violation,
         }
 
+    def process_event(self, event):
+
+        if isinstance(event, PlayCardEvent):
+
+            result = self.validate_move(
+                event.player,
+                event.card,
+            )
+
+            return {
+                "event": event.action,
+                "player": event.player,
+                "card": event.card,
+                "decision": result["decision"],
+                "reason": result["reason"],
+            }
+
+        return {
+            "event": event.action,
+            "player": event.player,
+            "decision": "IGNORED",
+            "reason": "Event type is not handled by the referee.",
+        }
+
     def judge_move(self, player, card):
 
-        result = self.validate_move(
-            player,
-            card,
+        event = PlayCardEvent(
+            player=player,
+            card=card,
         )
 
+        result = self.process_event(event)
+
         print("\n=== AI REFEREE DECISION ===")
-        print(f"Player: {player}")
-        print("Action: PLAY_CARD")
-        print(f"Card: {card}")
+        print(f"Player: {result['player']}")
+        print(f"Action: {result['event']}")
+        print(f"Card: {result['card']}")
         print(f"Decision: {result['decision']}")
         print(f"Reason: {result['reason']}")
 
