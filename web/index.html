@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Referee</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="hero">
+
+            <a
+                class="github-link"
+                href="https://github.com/hamidreza-chehrepak/AI-Referee"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub: hamidreza-chehrepak / AI-Referee
+            </a>
+
+            <div class="project-title">
+                AI Referee
+            </div>
+
+            <div class="project-subtitle">
+                Online Human vs Human Game
+            </div>
+
+            <div class="connection-status">
+                <span id="status-dot"></span>
+                <span id="status-text">Disconnected</span>
+            </div>
+
+        </header>
+
+
+        <section class="players">
+
+            <div class="player-card">
+
+                <h2>Player 1</h2>
+
+                <p id="player1-status">
+                    Waiting...
+                </p>
+
+            </div>
+
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <div class="player-card">
+
+                <h2>Player 2</h2>
+
+                <p id="player2-status">
+                    Waiting...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="referee-panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    AI Referee
+                </h2>
+
+                <span
+                    id="decision-badge"
+                    class="decision-badge"
+                >
+                    WAITING
+                </span>
+
+            </div>
+
+            <div
+                id="referee-message"
+                class="referee-message"
+            >
+                Waiting for a move...
+            </div>
+
+        </section>
+
+
+        <section class="game-table">
+
+            <div class="table-header">
+
+                <h2>
+                    Game Table
+                </h2>
+
+                <div class="trump">
+                    Trump: ♠
+                </div>
+
+            </div>
+
+
+            <div
+                id="played-cards"
+                class="played-cards"
+            >
+
+                <div class="empty-table">
+                    No cards played yet
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="hand-section">
+
+            <h2>
+                Your Cards
+            </h2>
+
+            <div
+                id="hand"
+                class="hand"
+            >
+
+                <div class="waiting">
+                    Waiting for cards...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+
+            <div>
+                AI Referee Project
+            </div>
+
+            <div>
+                Human vs Human · AI-assisted Refereeing
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>

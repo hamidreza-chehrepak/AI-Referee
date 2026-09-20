@@ -1,5 +1,5 @@
-from events import PlayCardEvent
-from rules import get_move_violation
+from game.events import PlayCardEvent
+from game.rules import get_move_violation
 
 
 class AIReferee:
